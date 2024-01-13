@@ -2,19 +2,20 @@ import Button from "@mui/material/Button"
 import TextField from '@mui/material/TextField';
 import Card from '@mui/material/Card';
 import { useState } from "react";
+
+
 function Signup(){
 
 
-  const [email ,setemail] = useState("");
-const [password , setpassword] = useState("")
+  const [email ,setemail] = useState("")
+  const [password , setPassword] = useState("")
   return ( <div>
 
 
-{email};
-{password}
 
 
 
+ 
 {/* <div style = {{width :"100vw" ,
   height: "100vh",
   backgroundColor: "#eeeeee"
@@ -51,9 +52,8 @@ const [password , setpassword] = useState("")
  <br />
  <TextField 
  onChange={(e) =>{
-  setpassword(e.target.value);
- }}
- 
+  setPassword(e.target.value);
+ }} 
  
  
  id= {"password"}
@@ -66,23 +66,43 @@ const [password , setpassword] = useState("")
 
  {/* <center> */}
  <Button  onClick ={()=>{
-  let username = document.getElementById( "username").value;
-  let password = document.getElementById( "password").value;
-  fetch("http://localhost:3000/admin/signup" ,  {
-    headers: {
-      "Content-Type": "application/json",
-    },
-method: "POST" , 
-body: JSON.stringify({
-username,
-password
+  // let username = document.getElementById( "username").value;
+  // let password = document.getElementById( "password").value;
+//instead get ekement id we use const(email , constemail) = useState("")
+  
+function callback2(data){
+  localStorage.setItem("token" ,data.token);
+  
+ 
+}
 
+
+function callback(response){
+  response.json().then(callback2)
+}
+
+
+  fetch("http://localhost:3000/admin/signup" ,  {
+   
+  method: "POST" ,
+  
+  headers: {
+      "Content-Type": "application/json",
+    
+    },
+ 
+body: JSON.stringify({
+username : email , 
+password : password
 })
 
   })
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error('Error:', error));
+
+  .then(response => callback(response))
+  .catch(error =>{
+   console.error('Error' , error);
+  })
+  
   
   }}
   

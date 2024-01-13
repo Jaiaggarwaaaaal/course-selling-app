@@ -1,9 +1,10 @@
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-
+//window.location make the page refresh again and agian so we have to declare it with 
+import {useNavigate} from 'react-router-dom';
 
 function Appbar(){
-
+const navigate = useNavigate()
 
     return <div style ={{
         display:"flex",
@@ -21,13 +22,13 @@ marginTop: 5,
 <div>
     {/* <div style={{marginRight: 10}}> */}
 <Button onClick={() =>{
-    window.location = "/signup"
+    navigate( "/signup")
 }}
 variant='contained'style={{marginRight: 9 , marginTop :6}} >Sign Up </Button>
 {/* </div> */}
 {/* <div> */}
 <Button onClick={() =>{
-    window.location = "/signin"
+     navigate( "/signin")
 }} variant='contained' style={{
     marginRight : 2,
     marginTop : 6,

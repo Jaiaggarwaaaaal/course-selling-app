@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Signup from './signup.jsx';
 import SignIN from './signin.jsx';
 import Appbar from './Appbar.jsx';
+import Addcourse from './addcourse.jsx';
 
 // This file shows how you can do routing in React.
 // Try going to /login, /register, /about, /courses on the website and see how the html changes
@@ -21,11 +22,14 @@ function App() {
       <div style={{width :"100vw",
       height : " 100vh",
       backgroundColor : "#eeeee",}}>
-      <Appbar></Appbar>
+      
+      {/* <Addcourse></Addcourse> */}
       {/* <Signup></Signup> */}
      
         <Router>
+        <Appbar></Appbar>
             <Routes>
+                <Route path= "/addcourse" element={<Addcourse />} />
                 <Route path="/Signup" element={<Signup />} />
                 <Route path="/signIn" element={<SignIN />} />
                 
