@@ -40,6 +40,12 @@ const authenticateJwt = (req, res, next) => {
   }
 };
 
+app.get("/admin/me" , authenticateJwt ,(req ,res) => {
+res.json({
+  username : req.user.username
+})
+})
+
 // Admin routes
 app.post('/admin/signup', (req, res) => {
   const { username, password } = req.body;
