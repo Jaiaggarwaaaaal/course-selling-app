@@ -78,7 +78,7 @@ setprice(event.target.value)
  <Button  onClick ={()=>{
 
 function callback2(data){
-    localStorage.setItem("token" ,data.token);
+    alert("course added!")
     
    
   }

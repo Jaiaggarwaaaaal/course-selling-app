@@ -9,6 +9,7 @@ function Signup(){
 
   const [email ,setemail] = useState("")
   const [password , setPassword] = useState("")
+  // window.location("/")
   return ( <div>
 
 

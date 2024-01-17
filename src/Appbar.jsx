@@ -14,7 +14,7 @@ if(data.username){
     setuseremail(data.username)
 }
 }
-function callback(res) {
+function callback3(res) {
     console.log("Response Status:", res.status);
     res.json().then(callback2)
 }
@@ -26,7 +26,7 @@ fetch("http://localhost:3000/admin/me" ,{
         "Authorization" :"Bearer " + localStorage.getItem("token")
       
       },
-}).then(callback)
+}).then(callback3)
 .catch(error => console.error("Fetch Error:", error));
 
 } ,[] ) 
@@ -48,13 +48,14 @@ Coursera
 {/* //flexbox we have to declare for  child and if then we want to use it in the grandchild we have to defibe it again */}
 
 <div>
-    (Email)
-
+   {/* {Email} */}
 {/* <div style={{marginRight: 10}}> */}
 
 {/* </div> */}
 {/* <div> */}
 <Button onClick={() =>{
+    navigate ("/"),
+    // window.location("/"),
 localStorage.setItem("token" , null );
 
 }} variant='contained' style={{
