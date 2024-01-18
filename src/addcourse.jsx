@@ -77,8 +77,8 @@ setprice(event.target.value)
 
  <Button  onClick ={()=>{
 
-function callback2(data){
-    alert("course added!")
+function callback2({data}){
+    console.log(data);
     
    
   }

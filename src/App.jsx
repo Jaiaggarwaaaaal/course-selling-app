@@ -9,7 +9,7 @@ import Signup from './signup.jsx';
 import SignIN from './signin.jsx';
 import Appbar from './Appbar.jsx';
 import Addcourse from './addcourse.jsx';
-import Courses from './courses.jsx';
+import Courses from './course.jsx';
 
 // This file shows how you can do routing in React.
 // Try going to /login, /register, /about, /courses on the website and see how the html changes
@@ -29,9 +29,10 @@ function App() {
      
         <Router>
         <Appbar></Appbar>
+        
             <Routes>
                 <Route path= "/addcourse" element={<Addcourse />} />
-                <Route path = '/courses' element = {<Courses />} />
+                <Route path= "/course" element = {<Courses />} />
                 <Route path="/Signup" element={<Signup />} />
                 <Route path="/signIn" element={<SignIN />} />
                 
