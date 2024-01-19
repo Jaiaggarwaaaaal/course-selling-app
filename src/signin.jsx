@@ -18,7 +18,7 @@ function SignIN(){
 <p style ={{
   display :"flex",
   justifyContent :'center',
-   marginLeft :95,
+   marginLeft :94,
    marginTop : 150
 }}>  <b>Welcome Back Buddy! Signin Below</b></p>
 <div style={{
